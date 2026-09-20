@@ -1,0 +1,346 @@
+/* =====================================================
+   FUENTE
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+
+
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+   ===================================================== */
+
+* {
+    font-family: 'Poppins', cursive;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   CUERPO DE LA PÁGINA
+   ===================================================== */
+
+/* CAMBIO: usamos min-height: 100vh en lugar de
+   height: 82vh para que la página ocupe correctamente
+   toda la pantalla en celulares y PC. */
+
+body {
+    color: azure;
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: black;
+
+    /* CAMBIO: evitamos desplazamientos horizontales
+       accidentales en teléfonos. */
+    overflow-x: hidden;
+
+    /* CAMBIO: agregamos espacio lateral para evitar
+       que el contenido toque los bordes del celular. */
+    padding: 20px;
+}
+
+
+/* =====================================================
+   BOTÓN
+   ===================================================== */
+
+.botones {
+    padding: 9px;
+    border-radius: 80px;
+    background-color: transparent;
+    border: none;
+}
+
+
+.botones a {
+    background-color: #0a2be9;
+    padding: 9px 16px;
+
+    border-radius: 80px;
+
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    -ms-border-radius: 80px;
+    -o-border-radius: 80px;
+
+    /* CAMBIO: hacemos que el enlace se comporte
+       correctamente como botón. */
+    display: inline-block;
+
+    /* CAMBIO: mantenemos el texto blanco desde CSS
+       en lugar del style="color: #fff" del HTML. */
+    color: #fff;
+
+    /* CAMBIO: evitamos que el navegador cambie
+       el aspecto del enlace. */
+    text-decoration: none;
+
+    /* CAMBIO: transición suave al interactuar. */
+    transition: background-color 0.3s ease,
+                transform 0.2s ease;
+}
+
+
+/* =====================================================
+   EFECTO DEL BOTÓN
+   ===================================================== */
+
+.botones a:hover {
+    background-color: #1838ff;
+
+    /* CAMBIO: pequeño efecto al pasar el mouse. */
+    transform: scale(1.05);
+}
+
+
+.botones a:focus {
+    background-color: rgb(50, 194, 194);
+}
+
+
+/* =====================================================
+   TEXTO "HOLA AMOR!"
+   ===================================================== */
+
+.greetings {
+    /* CAMBIO: clamp permite que el tamaño se adapte
+       automáticamente al ancho de la pantalla. */
+    font-size: clamp(3rem, 10vw, 7rem);
+
+    font-weight: 900;
+
+    /* CAMBIO: centramos correctamente el texto. */
+    text-align: center;
+
+    /* CAMBIO: evitamos que el texto provoque
+       desplazamiento horizontal. */
+    width: 100%;
+
+    max-width: 100%;
+}
+
+
+/* =====================================================
+   ANIMACIÓN DE LAS LETRAS
+   ===================================================== */
+
+.greetings > span {
+    animation: glow 2.5s ease-in-out infinite;
+}
+
+
+@keyframes glow {
+
+    0%, 100% {
+        color: #fff;
+
+        text-shadow:
+            0 0 12px #39c6d6,
+            0 0 50px #39c6d6,
+            0 0 100px #39c6d6;
+    }
+
+    10%, 90% {
+        color: #111;
+        text-shadow: none;
+    }
+}
+
+
+/* =====================================================
+   DELAY DE CADA LETRA
+   ===================================================== */
+
+.greetings > span:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.greetings > span:nth-child(3) {
+    animation-delay: .4s;
+}
+
+.greetings > span:nth-child(4) {
+    animation-delay: .6s;
+}
+
+.greetings > span:nth-child(5) {
+    animation-delay: .8s;
+}
+
+.greetings > span:nth-child(6) {
+    animation-delay: 1s;
+}
+
+.greetings > span:nth-child(7) {
+    animation-delay: 1.2s;
+}
+
+.greetings > span:nth-child(8) {
+    animation-delay: 1.4s;
+}
+
+.greetings > span:nth-child(9) {
+    animation-delay: 1.6s;
+}
+
+
+/* =====================================================
+   DESCRIPCIÓN
+   ===================================================== */
+
+.description {
+    /* CAMBIO: tamaño adaptable según la pantalla. */
+    font-size: clamp(1rem, 3vw, 1.5rem);
+
+    margin-bottom: 20px;
+
+    /* CAMBIO: centramos el texto. */
+    text-align: center;
+
+    /* CAMBIO: evitamos que el texto sea demasiado
+       ancho en pantallas grandes. */
+    max-width: 90%;
+}
+
+
+/* =====================================================
+   TEXTO DEL BOTÓN
+   ===================================================== */
+
+.button a {
+    font-size: 1rem;
+}
+
+
+/* =====================================================
+   CELULARES
+   ===================================================== */
+
+@media screen and (max-width: 574px) {
+
+    /* CAMBIO: reducimos ligeramente el espacio
+       exterior en celulares. */
+    body {
+        padding: 15px;
+    }
+
+
+    /* CAMBIO: tamaño adaptativo para "Hola AMOR!". */
+    .greetings {
+        font-size: clamp(2.5rem, 13vw, 4rem);
+        font-weight: 800;
+        text-align: center;
+    }
+
+
+    /* CAMBIO: la descripción ahora es MÁS PEQUEÑA
+       que en PC, evitando que ocupe demasiado espacio. */
+    .description {
+        font-size: clamp(0.9rem, 4.5vw, 1.3rem);
+        margin-bottom: 18px;
+        max-width: 95%;
+    }
+
+
+    /* CAMBIO: botón ligeramente más cómodo
+       para tocar con el dedo. */
+    .botones a {
+        font-size: 0.95rem;
+        padding: 10px 17px;
+    }
+}
+
+
+/* =====================================================
+   CELULARES MUY PEQUEÑOS
+   ===================================================== */
+
+@media screen and (max-width: 380px) {
+
+    /* CAMBIO: reducimos un poco más el título para
+       evitar que se desborde horizontalmente. */
+    .greetings {
+        font-size: clamp(2.2rem, 12vw, 3.2rem);
+    }
+
+
+    /* CAMBIO: descripción ligeramente más pequeña. */
+    .description {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+
+
+    /* CAMBIO: botón compacto para pantallas pequeñas. */
+    .botones a {
+        font-size: 0.9rem;
+        padding: 9px 15px;
+    }
+}
+
+
+/* =====================================================
+   MEDIA LUNA
+   ===================================================== */
+
+.moon {
+    position: fixed;
+
+    top: 35px;
+    right: 40px;
+
+    width: 65px;
+    height: 65px;
+
+    background: #fff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 25px rgba(255, 255, 255, 0.25);
+
+    z-index: 10;
+}
+
+.moon::after {
+    content: "";
+
+    position: absolute;
+
+    top: -8px;
+    left: 18px;
+
+    width: 65px;
+    height: 65px;
+
+    background: black;
+
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 574px) {
+
+    .moon {
+        top: 25px;
+        right: 25px;
+
+        width: 50px;
+        height: 50px;
+    }
+
+    .moon::after {
+        top: -6px;
+        left: 14px;
+
+        width: 50px;
+        height: 50px;
+    }
+
+}
+
