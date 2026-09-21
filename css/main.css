@@ -1859,7 +1859,7 @@ h1 {
         width: 90%;
 
         /* El tamaño se adapta al ancho del celular. */
-        font-size: clamp(18px, 5vw, 28px);
+        font-size: clamp(15px, 4vw, 25px);
 
         /*
            Reducimos el espacio entre letras para que
