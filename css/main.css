@@ -41,7 +41,7 @@ body {
 
     #lyrics {
         top: 15%;
-        font-size: clamp(14px, 4vw, 18px);
+        font-size: clamp(15px, 4.3vw, 19px);
         margin-bottom: 0;
         letter-spacing: 1px;
         width: 90%;
@@ -79,7 +79,7 @@ body {
     /* CAMBIO:
        Aumentamos ligeramente el tamaño para que
        las letras sean fáciles de leer en celulares. */
-    font-size: clamp(14px, 4vw, 18px);
+    font-size: clamp(15px, 4.3vw, 19px);
 
     margin-bottom: 0;
     width: 90%;
@@ -270,7 +270,7 @@ body {
       font-size: 14px;
       margin-bottom: 35%;
       letter-spacing: 3px;
-      transform: scale(1.0);
+      transform: scale(1.35);
 }
 
 }
@@ -1859,7 +1859,7 @@ h1 {
         width: 90%;
 
         /* El tamaño se adapta al ancho del celular. */
-        font-size: clamp(22px, 7vw, 34px);
+        font-size: clamp(18px, 5vw, 28px);
 
         /*
            Reducimos el espacio entre letras para que
